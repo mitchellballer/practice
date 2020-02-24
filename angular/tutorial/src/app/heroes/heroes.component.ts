@@ -11,25 +11,16 @@ import { MessageService } from '../message.service';
 })
 
 export class HeroesComponent implements OnInit {
-
   heroes: Hero[];
 
-  constructor(private heroService: HeroService, private messageService: MessageService) {}
-  
-  hero: Hero = {
-    id: 1,
-    name: "Windstorm",
-  };
+  constructor(private heroService: HeroService) { }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
-  }
-  
   ngOnInit() {
     this.getHeroes();
   }
 
-
-
+  getHeroes(): void {
+    this.heroService.getHeroes()
+    .subscribe(heroes => this.heroes = heroes);
+  }
 }
