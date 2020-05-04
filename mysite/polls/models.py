@@ -1,4 +1,7 @@
+import datetime
+
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -20,6 +23,10 @@ class Question(models.Model):
     #string method to make object representation a little more intuative
     def __str__(self):
         return self.question_text
+
+    #custom method to see if question was published within the last day
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
