@@ -6,3 +6,7 @@ after making changes to Models:
 this creates a migration. 
 We can read a version of the migration with >python manage.py sqlmigrate polls 0001 (pretty cool)
 We can use a migration to create model tables in our database >python manage.py migrate
+
+Cool API things from the python shell >python manage.py shell
+>>>from polls.models import Choice, Question
+>>>Question.objects.all() #we see that there aren't any questions in the system yet
