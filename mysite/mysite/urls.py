@@ -23,10 +23,12 @@ Sends the remaining string to the included URLconf for further processing
 So urls in polls/urls.py ex /polls/, /fun_polls/, /content/polls/ etc will work
 
 Path argument: path(route, view, kwargs, name)
-route: required, string containing url pattern. Start at first pattern in  urlpatterns and goes through until it finds a match
+route: required, string containing url pattern. 
+    Start at first pattern in  urlpatterns and goes through until it finds a match
 view: required, function to be called with HttpRequest as first argument and any kwargs
 kwargs: optional, arguments to be passed in a dictionary to target view
-name: optional, allows you to refer to rul unambiguously from elsewhere. Can make global changes to URL patterns from a single file
+name: optional, allows you to refer to rul unambiguously from elsewhere.
+    Can make global changes to URL patterns from a single file
 """
 urlpatterns = [
     path('polls/', include('polls.urls')),

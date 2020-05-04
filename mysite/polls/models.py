@@ -10,7 +10,8 @@ Each model is represented by a class that subclasses django.db.models.Model
 Models have class variables which represent a database field in the model
 fields are instances of Field class. Name is used in python code and database column names
 some fields have required arguments eg CharField requires max_length
-Some fields have optional arguments eg. our votes field which is IntegerField has the optional field for default (which we set to 0)
+Some fields have optional arguments. 
+    eg. our votes field is an IntegerField has the optional field for default (which we set to 0)
 
 This small chunk of model code tells django to
     create database schema- CREATE TABLE statements
