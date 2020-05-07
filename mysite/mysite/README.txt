@@ -40,3 +40,9 @@ True
 #delete a choice
 >>>c = q2.choice_set.filter(choice_text__startswith='Just hacking')
 >>>c.delete
+
+
+Testing Django client
+set up test environment in the shell $python manage.py shell
+>>>from django.test.utils import setup_test_environment
+>>>setup_test_environment()

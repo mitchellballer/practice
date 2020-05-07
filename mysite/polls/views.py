@@ -40,7 +40,7 @@ class ResultsView(generic.DetailView):
         exclude questions that aren't published yet
         """
         return Question.objects.filter(pub_date__lte=timezone.now())
-            
+
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     try:
