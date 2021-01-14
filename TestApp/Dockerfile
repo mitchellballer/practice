@@ -1,7 +1,6 @@
 FROM python:alpine3.7
-ADD app.py /
-ADD requirements.txt /
-WORKDIR /
+COPY . /app
+WORKDIR /app
 RUN pip install -r requirements.txt
-EXPOSE 5000
-CMD [ "python3", "app.py" ]
+ENTRYPOINT ["python"]
+CMD [ "app.py" ]
